@@ -5,6 +5,7 @@ import string # For removing punctuation
 import json # For loading JSON files
 import random # For selecting a random response
 import sys # For system commands
+import os # For file operations
 
 
 #Downloading the required packages
@@ -12,9 +13,12 @@ nltk.download('punkt', quiet=True)
 nltk.download('punkt_tab', quiet=True)
 nltk.download('stopwords', quiet=True)
 
+#Setting the intents path
+script_dir = os.path.dirname(os.path.abspath(__file__))
+intents_path = os.path.join(script_dir, 'intents.json')
 
 #Getting the intents from the JSON file
-with open ('intents.json') as file:
+with open (intents_path, 'r') as file:
     intents = json.load(file)
 
 
@@ -54,7 +58,10 @@ def get_response(text):
 
 #Function to save the chat history
 def log_chat(user, bot):
-    with open("chat_history.txt", "a") as file:
+    base_dir = os.path.dirname(os.path.abspath(__file__))  # Get the directory of chatbot.py
+    log_path = os.path.join(base_dir, "chat_history.txt")  # Path to chat_history.txt
+
+    with open(log_path, 'a', encoding="utf-8") as file:
         file.write(f"User: {user}\n")
         file.write(f"Bot: {bot}\n\n")
 
@@ -63,7 +70,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         user_message = sys.argv[1]
         response = get_response(user_message)
-        print("Bot:", response)
+        print(response)
     else:
         #Creating a conversation loop
         while True:
@@ -73,5 +80,5 @@ if __name__ == "__main__":
                 log_chat(user_input, "Goodbye!")
                 break
             response = get_response(user_input)
-            print("Bot:", response)
+            print(response)
             log_chat(user_input, response)

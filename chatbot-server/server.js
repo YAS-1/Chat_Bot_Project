@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
-import spawn from "child_process";
+import {spawn} from "child_process";
 
 
 const app = express();
@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // The chat functionality
-app.post("/chat", (res, req) => {
+app.post("/chat", (req, res) => {
 
     const userInput = req.body.message;// Get the user's input
 
@@ -32,8 +32,11 @@ app.post("/chat", (res, req) => {
 
     // Listen for the child process to close
     pyProcess.on("close", () => {
+        console.log("Bot response:", botResponse);
         res.json({reply: botResponse.trim()});
     });
+
+    console.log("User input:", userInput);
 });
 
 //Start the server
