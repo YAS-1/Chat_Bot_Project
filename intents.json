@@ -27,7 +27,7 @@
     },
     {
       "tag": "greeting",
-      "patterns": ["Hi", "Hello", "Hey", "How are you?", "Good day", "Good evening", "Good morning", "Good afternoon", "What's up?", "How's it going?","How are you doing?"],
+      "patterns": ["Hi", "Hello", "Hey", "How are you?", "Good day", "Good evening", "Good morning", "Good afternoon", "What's up?"],
       "responses": ["Hello!", "Hi there!", "Hey!", "Hi! How can I help you today?"]
     },
     {

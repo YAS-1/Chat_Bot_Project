@@ -1,2 +1,4 @@
 .qodo
 .vscode
+chat_history.txt
+node_modules

@@ -4,12 +4,13 @@ from nltk.corpus import stopwords # For stopwords removal
 import string # For removing punctuation
 import json # For loading JSON files
 import random # For selecting a random response
+import sys # For system commands
 
 
 #Downloading the required packages
-nltk.download('punkt')
-nltk.download('punkt_tab')
-nltk.download('stopwords')
+nltk.download('punkt', quiet=True)
+nltk.download('punkt_tab', quiet=True)
+nltk.download('stopwords', quiet=True)
 
 
 #Getting the intents from the JSON file
@@ -51,11 +52,26 @@ def get_response(text):
     return "I'm sorry, I don't understand."
 
 
-#Creating a conversation loop
-while True:
-    user_input = input("You: ")
-    if user_input.lower() in ['exit', 'quit', 'bye']:
-        print("Bot: Goodbye!")
-        break
-    response = get_response(user_input)
-    print("Bot:", response)
+#Function to save the chat history
+def log_chat(user, bot):
+    with open("chat_history.txt", "a") as file:
+        file.write(f"User: {user}\n")
+        file.write(f"Bot: {bot}\n\n")
+
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        user_message = sys.argv[1]
+        response = get_response(user_message)
+        print("Bot:", response)
+    else:
+        #Creating a conversation loop
+        while True:
+            user_input = input("You: ")
+            if user_input.lower() in ['exit', 'quit', 'bye']:
+                print("Bot: Goodbye!")
+                log_chat(user_input, "Goodbye!")
+                break
+            response = get_response(user_input)
+            print("Bot:", response)
+            log_chat(user_input, response)
