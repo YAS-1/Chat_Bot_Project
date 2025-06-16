@@ -6,7 +6,22 @@
       "responses":["Tewali man"]
     },
     {
-      "tag": "luganda bye",
+      "tag": "luganda greetings(formal)",
+      "patterns": ["Wasuzotya"],
+      "responses":["Bulungi wasuzotya Sebo", "Bulungi wasuzotya"]
+    },
+    {
+      "tag": "luganda greetings(day1)",
+      "patterns": ["Jebaleko"],
+      "responses":["Kale nawe jebaleko"]
+    }, 
+    {
+      "tag": "luganda greetings (day2)",
+      "patterns": ["Ogamba ki"],
+      "responses":["Ahh sigamba", "Sigamba mpozi gwe"]
+    },  
+    {
+      "tag": "luganda bye(slang)",
       "patterns": ["Tunadamu", "Welaba", "Paka enkya"],
       "responses":["Ezze man", "Bela bulungi"]
     },
