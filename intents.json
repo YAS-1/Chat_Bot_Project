@@ -1,0 +1,34 @@
+{
+  "intents": [
+    {
+      "tag": "luganda greetings (slang)",
+      "patterns": ["Kiki ekiliwo", "Wagwan"],
+      "responses":["Tewali man"]
+    },
+    {
+      "tag": "luganda bye",
+      "patterns": ["Tunadamu", "Welaba", "Paka enkya"],
+      "responses":["Ezze man", "Bela bulungi"]
+    },
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Hey", "How are you?", "Good day", "Good evening", "Good morning", "Good afternoon", "What's up?", "How's it going?","How are you doing?"],
+      "responses": ["Hello!", "Hi there!", "Hey!", "Hi! How can I help you today?"]
+    },
+    {
+      "tag": "book_appointment",
+      "patterns": ["I want to book an appointment", "Book appointment", "Schedule visit", "Can I see a doctor?"],
+      "responses": ["Sure, I can help with booking. What day works for you?", "Let's get that appointment scheduled."]
+    },
+    {
+      "tag": "cancel_appointment",
+      "patterns": ["Cancel appointment", "I want to cancel", "Cancel my visit"],
+      "responses": ["Okay, your appointment has been cancelled.", "Cancelled! Let us know if you want to reschedule."]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you", "Goodbye", "Talk later"],
+      "responses": ["Bye! Take care!", "Goodbye!", "Have a great day!"]
+    }
+  ]
+}
