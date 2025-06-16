@@ -1,23 +1,24 @@
-import nltk
-from nltk.tokenize import word_tokenize
-from nltk.corpus import stopwords
-import string
-import json
-import random
+import nltk #Natural Language Toolkit
+from nltk.tokenize import word_tokenize # For tokenization
+from nltk.corpus import stopwords # For stopwords removal 
+import string # For removing punctuation
+import json # For loading JSON files
+import random # For selecting a random response
 
 
+#Downloading the required packages
 nltk.download('punkt')
 nltk.download('punkt_tab')
 nltk.download('stopwords')
 
 
-#Getting the intents
+#Getting the intents from the JSON file
 with open ('intents.json') as file:
     intents = json.load(file)
 
 
 
-#Cleaning the user's input
+#Function for cleaning the user's input
 def clean_text(text):
 
     #convert the text to lower
