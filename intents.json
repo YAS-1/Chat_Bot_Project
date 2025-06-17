@@ -31,14 +31,14 @@
       "responses": ["Hello!", "Hi there!", "Hey!", "Hi! How can I help you today?"]
     },
     {
-      "tag": "book_appointment",
-      "patterns": ["I want to book an appointment", "Book appointment", "Schedule visit", "Can I see a doctor?"],
-      "responses": ["Sure, I can help with booking. What day works for you?", "Let's get that appointment scheduled."]
-    },
-    {
       "tag": "cancel_appointment",
       "patterns": ["Cancel appointment", "I want to cancel", "Cancel my visit"],
       "responses": ["Okay, your appointment has been cancelled.", "Cancelled! Let us know if you want to reschedule."]
+    },
+    {
+      "tag": "book_appointment",
+      "patterns": ["I want to book an appointment", "Book appointment", "Schedule visit", "Can I see a doctor?"],
+      "responses": ["Sure, I can help with booking. What day works for you?", "Let's get that appointment scheduled."]
     },
     {
       "tag": "goodbye",
