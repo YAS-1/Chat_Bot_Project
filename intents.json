@@ -27,8 +27,13 @@
     },
     {
       "tag": "greeting",
-      "patterns": ["Hi", "Hello", "Hey", "How are you?", "Good day", "Good evening", "Good morning", "Good afternoon", "What's up?"],
+      "patterns": ["Hi", "Hello", "Hey", "How are you?", "Good day", "Good evening", "Good morning", "Good afternoon"],
       "responses": ["Hello!", "Hi there!", "Hey!", "Hi! How can I help you today?"]
+    },
+    {
+      "tag": "greeting 2",
+      "patterns": ["What's up"],
+      "responses": ["Nothing much, just hanging out", "Nothing much, how about you?"]
     },
     {
       "tag": "cancel_appointment",
