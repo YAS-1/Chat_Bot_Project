@@ -71,6 +71,7 @@ if __name__ == "__main__":
         user_message = sys.argv[1]
         response = get_response(user_message)
         print(response)
+        log_chat(user_message, response)
     else:
         #Creating a conversation loop
         while True:
