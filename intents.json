@@ -6,11 +6,6 @@
       "responses":["Tewali man"]
     },
     {
-      "tag": "insults",
-      "patterns": ["Fuck you"],
-      "responses":["Fuck you too", "Fuck yourself"]
-    },
-    {
       "tag": "luganda greetings(formal)",
       "patterns": ["Wasuzotya"],
       "responses":["Bulungi wasuzotya Sebo", "Bulungi wasuzotya"]
