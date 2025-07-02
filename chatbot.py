@@ -45,16 +45,25 @@ def clean_text(text):
 #Function to get the bot's response
 def get_response(text):
     tokens = clean_text(text)
+    best_score = 0
+    best_response = "🤖 I'm sorry, I don't understand."
+    best_tag = None
+    
     for intent in intents['intents']:
         for pattern in intent['patterns']:
             pattern_tokens = clean_text(pattern)
+            common_words = set(tokens).intersection(set(pattern_tokens))
+            score = len(common_words) / (len(set(pattern_tokens).union(set(tokens))) or 1)
 
-            #matching the text to a response
-            if any(word in tokens for word in pattern_tokens):
-                return random.choice(intent['responses'])
+            if score > best_score:
+                best_score = score
+                best_response = random.choice(intent['responses'])
+                best_tag = intent['tag']
 
-    return "I'm sorry, I don't understand."
 
+    print(f"Best score: {best_score}, Best response: {best_response}, Best tag: {best_tag}")
+
+    return best_response if best_score >= 0.2 else "🤖 I'm sorry, I don't understand."
 
 #Function to save the chat history
 def log_chat(user, bot):

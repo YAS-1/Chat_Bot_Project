@@ -1,0 +1,25 @@
+{
+    "intents": [
+      {
+        "tag": "FAQ1",
+        "patterns": ["What is NITA"],
+        "responses":["NITA is a government agency responsible for coordinating and regulating IT in the public sector."]
+      },
+      {
+        "tag": "FAQ2",
+        "patterns": ["What is the purpose of NITA"],
+        "responses":["The purpose of NITA is to coordinate and regulate IT in the public sector."]
+      },
+      {
+        "tag": "FAQ3",
+        "patterns": ["What is the role of NITA"],
+        "responses":["NITA's role is to coordinate and regulate IT in the public sector."]
+      },
+      {
+        "tag": "FAQ4",
+        "patterns": ["What is the mission of NITA"],
+        "responses":["NITA's mission is to coordinate and regulate IT in the public sector."]
+      }
+    ]
+  }
+  
