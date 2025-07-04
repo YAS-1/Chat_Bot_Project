@@ -33,6 +33,7 @@ app.post("/chat", (req, res) => {
 
     // Listen for the child process to close
     pyProcess.on("close", () => {
+        if (!botResponse.trim() === "🤖 I'm sorry, I don't understand.") 
         console.log("Bot response:", botResponse);
         res.json({reply: botResponse.trim()});
     });
