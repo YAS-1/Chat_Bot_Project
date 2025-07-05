@@ -78,11 +78,13 @@ def get_response(text):
     best_response = None
     
     #Check if the user's input is a custom response--
-    if cleaned_input in custom_responses:
-        response = custom_responses[cleaned_input]
-        if isinstance(response, list):
-            return random.choice(response)
-        return response
+    text_lower = text.lower()
+    for key in custom_responses:
+        if key in text_lower:
+            response = custom_responses[key]
+            if isinstance(response, list):
+                return random.choice(response)
+            return response
 
     for intent in intents['intents']:
         for pattern in intent['patterns']:
